@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const path = require('path')
 const yaml = require('js-yaml')
 const fs = require('fs')
@@ -12,9 +14,11 @@ function main () {
       const defaultProfile = profiles['default']
       const selectedProfile = profiles[profile]
       const env = { ...defaultProfile, ...selectedProfile }
-      const envStr = Object.keys(env).map(envKey => `${envKey}: ${env[envKey]}\n\n`).join('').trim()
+      const envStr = Object.keys(env).map(envKey => `${envKey}: ${env[envKey]}\n`).join('')
 
       fs.writeFileSync(path.join(cwd, '.env'), envStr)
+
+      console.log(`Switched to the ${profile} profile`)
     } else {
       console.error(`${profile} not found in profiles`)
     }
@@ -23,4 +27,8 @@ function main () {
   }
 }
 
-main()
+if (require.main === module) {
+  main()
+}
+
+module.exports = main
