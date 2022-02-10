@@ -4,12 +4,13 @@
 Sample `env.yml` configuration
 ```
 default:
-  # comment
-  default: "true"
+  # comment...
+  default: true
 
 dev: 
-  dev: "true"
-  foo: "bar"
+  default: false
+  dev: true
+  foo: bar
 ```
 
 Switch profiles
@@ -18,16 +19,18 @@ $ env-profiles default
 Switched to the default profile
 
 $ cat .env
-default: true
+default=true
 ```
+
+When using custom profiles values are inherited from the default profile, then duplicates are overwritten by custom profile values
 ```
 $ env-profiles dev
 Switched to the dev profile
 
 $ cat .env
-default: true
-dev: true
-foo: bar
+default=false
+dev=true
+foo=bar
 ```
 
 `env-profiles` looks for the `env.yml` configuration file and writes the `.env` file in your current working directory of execution.
