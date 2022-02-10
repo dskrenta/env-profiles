@@ -1,6 +1,6 @@
 {
   "name": "env-profiles",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Dead simple .env profile switching with yaml config",
   "main": "index.js",
   "bin": "index.js",

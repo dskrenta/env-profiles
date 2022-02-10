@@ -1,7 +1,7 @@
 # env-profiles
 **Dead simple .env profile switching with yaml config**
 
-Sample `env.yaml` configuration
+Sample `env.yml` configuration
 ```
 default:
   # comment
