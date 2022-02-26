@@ -1,6 +1,8 @@
 # env-profiles
 **Dead simple .env profile switching with yaml config**
 
+[![https://nodei.co/npm/YOUR-MODULE-NAME.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/env-profiles.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/env-profiles)
+
 Sample `env.yml` configuration
 ```
 default:
