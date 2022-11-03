@@ -14,7 +14,7 @@ function main () {
       const defaultProfile = profiles['default']
       const selectedProfile = profiles[profile]
       const env = { ...defaultProfile, ...selectedProfile }
-      const envStr = Object.keys(env).map(envKey => `${envKey}=${env[envKey]}\n`).join('')
+      const envStr = Object.keys(env).map(envKey => `${envKey}="${env[envKey]}"\n`).join('')
 
       fs.writeFileSync(path.join(cwd, '.env'), envStr)
 
